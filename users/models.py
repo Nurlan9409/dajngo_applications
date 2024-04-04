@@ -7,9 +7,10 @@ class Adress(models.Model):
         return self.name
 
 class Role(models.TextChoices):
-    bakalavra = ("bakalavra", "B")
+    bakalavra = ("bakalavra ", "B")
     magistratura = ("magistratura", "M")
     professor = ("professor", "P")
+
 
 
 class Student(models.Model):
