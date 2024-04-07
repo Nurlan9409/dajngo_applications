@@ -1,9 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import View
 
-def users_page(request):
-    return render(request, 'userss.html')
+from users.models import Student
 
 
-def about_page(request):
-    return render(request, 'users1.html')
+class StudentLisView(View):
+    def get(self,request):
+        students = Student.objects.all()
+        return render(request,'student.html',{'students':students})
+
+
+
+class MainView(View):
+    def get(self, request):
+        return render(request, 'main.html')

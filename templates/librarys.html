@@ -5,9 +5,30 @@
     <title>Title</title>
 </head>
 <body>
-<h2>This is library page</h2>
-<p>
-    Hello our dear readers!!!
-</p>
+<h1>this is library page!</h1>
+
+<form action=""method="POST">
+    {%csrf_token %}
+    <input type="search" value="" placeholder="Search">
+    <button type = "subnmit">Search</button>
+
+</form>
+    <h2>Books:</h2>
+    <ul>
+        {%for book in books %}
+        <li>
+            <h2>
+                <a href="{%url 'book_detail' book.id%}">Name:{{book.title}}</a>
+                _
+            </h2>
+
+        </li>
+    {%end for%}
+    </ul>
+
+
+
+    <a href="{% url 'main'%}" >Back</a>
+
 </body>
 </html>

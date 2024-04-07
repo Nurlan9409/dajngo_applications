@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Book,Autor,BookingBook,Comment
-from admin_auto_filters.filters import AutocompleteFilter
 from import_export.admin import ImportExportModelAdmin
 
 

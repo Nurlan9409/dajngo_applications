@@ -7,7 +7,21 @@
 <body>
 <h4>This is users page</h4>
 
-<p>         Hello users my web syte </p>
+
+    <h2>Students:</h2>
+    <ul>
+        {%for students in students %}
+        <li>
+            <h2>
+                <a href="">{{students.first_name}}{{students.last_name}}</a>
+            </h2>
+
+        </li>
+    {%end for%}
+    </ul>
+
+
+    <a href="{% url 'main'%}" >Back</a>
 
 </body>
 </html>
